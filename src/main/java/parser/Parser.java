@@ -13,7 +13,7 @@ public class Parser {
     public static void main(String[] args) throws IOException {
         InputStream source = Parser.class.getResourceAsStream("/cities.txt");
         CSVParser<City> parser = CSVParserBuilder.aParser(City::new, City.CSVFields.class).forRfc4180().build();
-        Stream<City> cities = parser.parse(source);
+        Stream<City> cities = parser.parse(source).sequential();
         cities.forEach(System.out::println);
     }
 }

@@ -1,46 +1,100 @@
 package domain;
 
+
 import uk.elementarysoftware.quickcsv.api.CSVRecordWithHeader;
 
 public class City {
-    
-    public static enum CSVFields {
-        AccentCity,
-        Population,
-        Latitude,
-        Longitude
-    }
-    
-    private final String city;
-    private final int population;
-    private final double latitude;
-    private final double longitude;
+
+    private final String network;
+    private final String geonameId;
+    private final String registeredCountryGeonameId;
+    private final String representedCountryGeonameId;
+    private final String isAnonymousProxy;
+    private final String isSatelliteProvider;
+    private final String postalCode;
+    private final String latitude;
+    private final String longitude;
+    private final String accuracyRadius;
 
     public City(CSVRecordWithHeader<CSVFields> r) {
-        this.city = r.getField(CSVFields.AccentCity).asString();
-        this.population = r.getField(CSVFields.Population).asInt();
-        this.latitude = r.getField(CSVFields.Latitude).asDouble();
-        this.longitude = r.getField(CSVFields.Longitude).asDouble();
+        this.network = r.getField(CSVFields.network).asString();
+        this.geonameId = r.getField(CSVFields.geoname_id).asString();
+        this.registeredCountryGeonameId = r.getField(CSVFields.registered_country_geoname_id).asString();
+        this.representedCountryGeonameId = r.getField(CSVFields.represented_country_geoname_id).asString();
+        this.isAnonymousProxy = r.getField(CSVFields.is_anonymous_proxy).asString();
+        this.isSatelliteProvider = r.getField(CSVFields.is_satellite_provider).asString();
+        this.postalCode = r.getField(CSVFields.postal_code).asString();
+        this.latitude = r.getField(CSVFields.latitude).asString();
+        this.longitude = r.getField(CSVFields.longitude).asString();
+        this.accuracyRadius = r.getField(CSVFields.accuracy_radius).asString();
     }
 
-    public String getCity() {
-        return city;
+    public String getNetwork() {
+        return network;
     }
 
-    public int getPopulation() {
-        return population;
+    public String getGeonameId() {
+        return geonameId;
     }
 
-    public double getLatitude() {
+    public String getRegisteredCountryGeonameId() {
+        return registeredCountryGeonameId;
+    }
+
+    public String getRepresentedCountryGeonameId() {
+        return representedCountryGeonameId;
+    }
+
+    public String getIsAnonymousProxy() {
+        return isAnonymousProxy;
+    }
+
+    public String getIsSatelliteProvider() {
+        return isSatelliteProvider;
+    }
+
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    public String getLatitude() {
         return latitude;
     }
 
-    public double getLongitude() {
+    public String getLongitude() {
         return longitude;
+    }
+
+    public String getAccuracyRadius() {
+        return accuracyRadius;
     }
 
     @Override
     public String toString() {
-        return "City [city=" + city + ", population=" + population + ", latitude=" + latitude + ", longitude=" + longitude + "]";
+        return "City{" +
+                "network='" + network + '\'' +
+                ", geonameId=" + geonameId +
+                ", registeredCountryGeonameId=" + registeredCountryGeonameId +
+                ", representedCountryGeonameId=" + representedCountryGeonameId +
+                ", isAnonymousProxy='" + isAnonymousProxy + '\'' +
+                ", isSatelliteProvider='" + isSatelliteProvider + '\'' +
+                ", postalCode='" + postalCode + '\'' +
+                ", latitude=" + latitude +
+                ", longitude=" + longitude +
+                ", accuracyRadius=" + accuracyRadius +
+                '}';
+    }
+
+    public static enum CSVFields {
+        network,
+        geoname_id,
+        registered_country_geoname_id,
+        represented_country_geoname_id,
+        is_anonymous_proxy,
+        is_satellite_provider,
+        postal_code,
+        latitude,
+        longitude,
+        accuracy_radius
     }
 }

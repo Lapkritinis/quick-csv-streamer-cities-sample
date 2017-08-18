@@ -1,4 +1,4 @@
-Country,City,AccentCity,Region,Population,Latitude,Longitude
-ad,andorra,Andorra,07,,42.5,1.5166667
-gb,city of london,City of London,H9,8000000,51.514125,-.093689
-ua,kharkiv,Kharkiv,07,1400000,49.980814,36.252718
+network,geoname_id,registered_country_geoname_id,represented_country_geoname_id,is_anonymous_proxy,is_satellite_provider,postal_code,latitude,longitude,accuracy_radius
+2.38.158.140/31,3172394,3175395,,0,0,80126,40.8563,14.2464,50
+2.38.158.142/32,,3175395,,1,0,,,,
+2.38.158.143/32,3172394,3175395,,0,0,80126,40.8563,14.2464,50
